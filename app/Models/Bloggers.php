@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bloggers extends Model
 {
+    public $timestamp = false;
     protected $fillable = ['name', 'blog'];
 }
