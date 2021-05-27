@@ -1,0 +1,22 @@
+<form (ngSubmit)="updateBlogger()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="name"
+      class="form-control"
+      [(ngModel)]="blogger.name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="name">Blog</label>
+    <input
+      type="text"
+      name="blog"
+      class="form-control"
+      [(ngModel)]="blogger.blog"
+    />
+  </div>
+
+  <button class="btn btn-dark btn-sm mt-4">Update</button>
+</form>

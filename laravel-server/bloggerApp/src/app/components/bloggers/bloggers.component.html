@@ -1,0 +1,51 @@
+<form (ngSubmit)="insertData()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="name"
+      class="form-control"
+      [(ngModel)]="blogger.name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="name">Blog</label>
+    <input
+      type="text"
+      name="blog"
+      class="form-control"
+      [(ngModel)]="blogger.blog"
+    />
+  </div>
+
+  <button class="btn btn-dark btn-sm mt-4">Submit</button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Blog</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let blog of bloggers">
+      <th scope="row">{{ blog.id }}</th>
+      <td>{{ blog.name }}</td>
+      <td>{{ blog.blog }}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="deleteData(blog.id)">
+          Delete
+        </button>
+        <button
+          class="btn btn-warning btn-sm mx-2"
+          routerLink="edit/{{ blog.id }}"
+        >
+          Edit
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
